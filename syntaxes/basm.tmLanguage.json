@@ -1,0 +1,556 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "basm",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#registers"
+		},
+		{
+			"include": "#instructions"
+		},
+		{
+			"include": "#directives"
+		},
+		{
+			"include": "#preprocessors"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#labels"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#relocations"
+		},
+		{
+			"include": "#symbols"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.block.basm",
+					"begin": ";\\*",
+					"end": "\\*;"
+				},
+				{
+					"name": "comment.line.basm",
+					"begin": ";",
+					"end": "\\n"
+				}
+			]
+		},
+		"registers": {
+			"patterns": [
+				{
+					"name": "register.x.basm",
+					"match": "\\bx[1-2]?[0-9]\\b"
+				},
+				{
+					"name": "register.x.basm",
+					"match": "\\bxzr\\b"
+				},
+				{
+					"name": "register.sp.basm",
+					"match": "\\bsp\\b"
+				}
+			]
+		},
+		"instructions": {
+			"patterns": [
+				{
+					"name": "keyword.instruction.add.basm",
+					"match": "\\badd[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.sub.basm",
+					"match": "\\bsub[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.rsb.basm",
+					"match": "\\brsb[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.adc.basm",
+					"match": "\\badc[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.sbc.basm",
+					"match": "\\bsbc[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.rsc.basm",
+					"match": "\\brsc[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.mul.basm",
+					"match": "\\bmul[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.umull.basm",
+					"match": "\\bumull[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.smull.basm",
+					"match": "\\bsmull[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.vabs_f32.basm",
+					"match": "\\bvabs\\.f32?\\b"
+				},
+				{
+					"name": "keyword.instruction.vneg_f32.basm",
+					"match": "\\bvneg\\.f32?\\b"
+				},
+				{
+					"name": "keyword.instruction.vsqrt_f32.basm",
+					"match": "\\bvsqrt\\.f32?\\b"
+				},
+				{
+					"name": "keyword.instruction.vadd_f32.basm",
+					"match": "\\bvadd\\.f32?\\b"
+				},
+				{
+					"name": "keyword.instruction.vsub_f32.basm",
+					"match": "\\bvsub\\.f32?\\b"
+				},
+				{
+					"name": "keyword.instruction.vdiv_f32.basm",
+					"match": "\\bvdiv\\.f32?\\b"
+				},
+				{
+					"name": "keyword.instruction.vmul_f32.basm",
+					"match": "\\bvmul\\.f32?\\b"
+				},
+				{
+					"name": "keyword.instruction.vcmp_f32.basm",
+					"match": "\\bvcmp\\.f32?\\b"
+				},
+				{
+					"name": "keyword.instruction.vsel_f32.basm",
+					"match": "\\bvsel\\.f32?\\b"
+				},
+				{
+					"name": "keyword.instruction.vcint_u32_f32.basm",
+					"match": "\\bvcint\\.u32\\.f32?\\b"
+				},
+				{
+					"name": "keyword.instruction.vcint_s32_f32.basm",
+					"match": "\\bvcint\\.s32\\.f32?\\b"
+				},
+				{
+					"name": "keyword.instruction.vcflo_u32_f32.basm",
+					"match": "\\bvcflo\\.u32\\.f32?\\b"
+				},
+				{
+					"name": "keyword.instruction.vcflo_s32_f32.basm",
+					"match": "\\bvcflo\\.s32\\.f32?\\b"
+				},
+				{
+					"name": "keyword.instruction.vmov_f32.basm",
+					"match": "\\bvmov\\.f32?\\b"
+				},
+				{
+					"name": "keyword.instruction.and.basm",
+					"match": "\\band[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.orr.basm",
+					"match": "\\borr[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.eor.basm",
+					"match": "\\beor[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.bic.basm",
+					"match": "\\bbic[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.lsl.basm",
+					"match": "\\blsl[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.lsr.basm",
+					"match": "\\blsr[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.asr.basm",
+					"match": "\\basr[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.ror.basm",
+					"match": "\\bror[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.cmp.basm",
+					"match": "\\bcmp\\b"
+				},
+				{
+					"name": "keyword.instruction.cmn.basm",
+					"match": "\\bcmn\\b"
+				},
+				{
+					"name": "keyword.instruction.tst.basm",
+					"match": "\\btst\\b"
+				},
+				{
+					"name": "keyword.instruction.teq.basm",
+					"match": "\\bteq\\b"
+				},
+				{
+					"name": "keyword.instruction.mov.basm",
+					"match": "\\bmov[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.mvn.basm",
+					"match": "\\bmvn[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.ldr.basm",
+					"match": "\\bldr[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.ldrb.basm",
+					"match": "\\bldrb[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.ldrh.basm",
+					"match": "\\bldrh[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.str.basm",
+					"match": "\\bstr[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.strb.basm",
+					"match": "\\bstrb[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.strh.basm",
+					"match": "\\bstrh[s]?\\b"
+				},
+				{
+					"name": "keyword.instruction.b.basm",
+					"match": "\\bb\\b"
+				},
+				{
+					"name": "keyword.instruction.bl.basm",
+					"match": "\\bbl\\b"
+				},
+				{
+					"name": "keyword.instruction.bx.basm",
+					"match": "\\bbx\\b"
+				},
+				{
+					"name": "keyword.instruction.ret.basm",
+					"match": "\\bret\\b"
+				},
+				{
+					"name": "keyword.instruction.blx.basm",
+					"match": "\\bblx\\b"
+				},
+				{
+					"name": "keyword.instruction.swi.basm",
+					"match": "\\bswi\\b"
+				},
+				{
+					"name": "keyword.instruction.adrp.basm",
+					"match": "\\badrp\\b"
+				},
+				{
+					"name": "keyword.instruction.hlt.basm",
+					"match": "\\bhlt\\b"
+				}
+			]
+		},
+		"directives": {
+			"patterns": [
+				{
+					"name": "directive.global.basm",
+					"match": "\\.global\\b"
+				},
+				{
+					"name": "directive.extern.basm",
+					"match": "\\.extern\\b"
+				},
+				{
+					"name": "directive.equ.basm",
+					"match": "\\.equ\\b"
+				},
+				{
+					"name": "directive.org.basm",
+					"match": "\\.org\\b"
+				},
+				{
+					"name": "directive.scope.basm",
+					"match": "\\.scope\\b"
+				},
+				{
+					"name": "directive.scend.basm",
+					"match": "\\.scend\\b"
+				},
+				{
+					"name": "directive.advance.basm",
+					"match": "\\.advance\\b"
+				},
+				{
+					"name": "directive.align.basm",
+					"match": "\\.align\\b"
+				},
+				{
+					"name": "directive.section.basm",
+					"match": "\\.section\\b"
+				},
+				{
+					"name": "directive.text.basm",
+					"match": "\\.text\\b"
+				},
+				{
+					"name": "directive.data.basm",
+					"match": "\\.data\\b"
+				},
+				{
+					"name": "directive.bss.basm",
+					"match": "\\.bss\\b"
+				},
+				{
+					"name": "directive.stop.basm",
+					"match": "\\.stop\\b"
+				}
+			]
+		},
+		"preprocessors": {
+			"patterns": [
+				{
+					"begin": "^\\s*(#include)\\b\\s*",
+					"end": "$",
+					"beginCaptures": {
+						"1": {
+							"name": "preprocessor.include.basm"
+						}
+					},
+					"patterns": [
+						{
+							"match": "<",
+							"name": "preprocessor.include.system.begin.basm"
+						},
+						{
+							"include": "#strings",
+							"name": "preprocessor.include.argument.basm"
+						},
+						{
+							"match": ">",
+							"name": "preprocessor.include.system.end.basm"
+						}
+					]
+				},
+				{
+					"begin": "(?<=^\\s*)(#macro)(\\b\\s*)([a-zA-Z_][\\w]*)\\b\\s*",
+					"end": "$",
+					"beginCaptures": {
+						"1": {
+							"name": "preprocessor.macro.basm"
+						},
+						"3": {
+							"name": "preprocessor.macro.name.basm"
+						}
+					},
+					"patterns": [
+						{
+							"begin": "\\(",
+							"end": "\\)[ \\t]*$",
+							"beginCaptures": {
+								"0": {
+									"name": "preprocessor.macro.arguments.begin.basm"
+								}
+							},
+							"endCaptures": {
+								"0": {
+									"name": "preprocessor.macro.arguments.end.basm"
+								}
+							},
+							"name": "preprocessor.macro.arguments.basm",
+							"patterns": [
+								{
+									"match": "\\b[a-zA-Z_][\\w]*\\b",
+									"name": "preprocessor.macro.argument.basm"
+								}
+							]
+						}
+					]
+				},
+				{
+					"begin": "(?<=^\\s*)(#macret)",
+					"end": "$",
+					"beginCaptures": {
+						"1": {
+							"name": "preprocessor.macret.basm"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#symbols"
+						},
+						{
+							"include": "#strings"
+						},
+						{
+							"include": "#numbers"
+						}
+					]
+				},
+				{
+					"match": "(?<=^\\s*)(#macend)",
+					"name": "preprocessor.macend.basm"
+				},
+				{
+					"begin": "(?<=^\\s*)(#invoke)(\\b\\s*)([a-zA-Z_][\\w]*)\\b\\s*",
+					"end": "$",
+					"beginCaptures": {
+						"1": {
+							"name": "preprocessor.invoke.basm"
+						},
+						"3": {
+							"name": "preprocessor.invoke.name.basm"
+						}
+					},
+					"patterns": [
+						{
+							"begin": "\\(",
+							"end": "\\)(?=[ \\t]*$)",
+							"beginCaptures": {
+								"0": {
+									"name": "preprocessor.invoke.arguments.begin.basm"
+								}
+							},
+							"endCaptures": {
+								"0": {
+									"name": "preprocessor.invoke.arguments.end.basm"
+								}
+							},
+							"name": "preprocessor.invoke.arguments.basm"
+						}
+					]
+				},
+				{
+					"match": "(?<=^\\s*)(#define)(\\b\\s*)([a-zA-Z_][\\w]*)\\b\\s*",
+					"captures": {
+						"1": {
+							"name": "preprocessor.define.basm"
+						},
+						"3": {
+							"name": "preprocessor.define.symbol.basm"
+						}
+					}
+				},
+				{
+					"match": "(?<=^\\s*)(#ifdef|#ifndef|#elsedef|#elsendef|#ifequ|#ifnequ|#ifmore|#ifless|#elseequ|#elsenequ|#elseless|#elsemore)(\\b\\s*)([a-zA-Z_][\\w]*)\\b\\s*",
+					"captures": {
+						"1": {
+							"name": "preprocessor.conditional.basm"
+						},
+						"3": {
+							"name": "preprocessor.conditional.symbol.basm"
+						}
+					}
+				},
+				{
+					"match": "(?<=^\\s*)(#else|#endif)\\b\\s*",
+					"captures": {
+						"1": {
+							"name": "preprocessor.conditional.basm"
+						}
+					}
+				},
+				{
+					"match": "(?<=^\\s*)(#undef)(\\b\\s*)([a-zA-Z_][\\w]*)\\b\\s*",
+					"captures": {
+						"1": {
+							"name": "preprocessor.undef.basm"
+						},
+						"3": {
+							"name": "preprocessor.undef.symbol.basm"
+						}
+					}
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"match": "(?<!\\\\)(?:\\\\{2})*\"(?:(?<!\\\\)(?:\\\\{2})*\\\\\"|[^\"])+(?<!\\\\)(?:\\\\{2})*\"",
+					"name": "string.quoted.double.basm"
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"match": "(?<![\\w\\#\\$@%])(\\#?)\\$[0-9a-fA-F]+(?![\\#\\$@%\\w])",
+					"name": "constant.numeric.integer.hexadecimal.basm"
+				},
+				{
+					"match": "(?<![\\w\\#\\$@%])(\\#?)[0-9]+(?![\\#\\$@%\\w])",
+					"name": "constant.numeric.integer.decimal.basm"
+				},
+				{
+					"match": "(?<![\\w\\#\\$@%])(\\#?)@[0-7]+(?![\\#\\$@%\\w])",
+					"name": "constant.numeric.integer.octal.basm"
+				},
+				{
+					"match": "(?<![\\w\\#\\$@%])(\\#?)%[01]+(?![\\#\\$@%\\w])",
+					"name": "constant.numeric.integer.binary.basm"
+				}
+			]
+		},
+		"labels": {
+			"patterns": [
+				{
+					"match": "^\\s*\\w+:",
+					"name": "variable.label.basm"
+				}
+			]
+		},
+		"symbols": {
+			"patterns": [
+				{
+					"match": "(?<=\\b)[a-zA-Z_][\\w]*(?=\\b)",
+					"name": "variable.parameter.symbol.basm"
+				}
+			]
+		},
+		"relocations": {
+			"patterns": [
+				{
+					"match": ":lo12:",
+					"name": "relocation.lo12.basm"
+				},
+				{
+					"match": ":hi20:",
+					"name": "relocation.hi20.basm"
+				},
+				{
+					"match": ":lo19:",
+					"name": "relocation.lo19.basm"
+				},
+				{
+					"match": ":hi13:",
+					"name": "relocation.hi13.basm"
+				}
+			]
+		}
+	},
+	"scopeName": "source.basm"
+}
