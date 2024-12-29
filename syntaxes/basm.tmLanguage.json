@@ -328,6 +328,34 @@
 				{
 					"name": "directive.stop.basm",
 					"match": "\\.stop\\b"
+				},
+				{
+					"name": "directive.byte.basm",
+					"match": "\\.[s]?byte\\b"
+				},
+				{
+					"name": "directive.dbyte.basm",
+					"match": "\\.[s]?dbyte\\b"
+				},
+				{
+					"name": "directive.word.basm",
+					"match": "\\.[s]?word\\b"
+				},
+				{
+					"name": "directive.dword.basm",
+					"match": "\\.[s]?dword\\b"
+				},
+				{
+					"name": "directive.char.basm",
+					"match": "\\.char\\b"
+				},
+				{
+					"name": "directive.ascii.basm",
+					"match": "\\.ascii\\b"
+				},
+				{
+					"name": "directive.asciz.basm",
+					"match": "\\.asciz\\b"
 				}
 			]
 		},

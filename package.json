@@ -1,25 +1,41 @@
 {
-  "name": "basm",
-  "displayName": "basm",
-  "description": "B Assembly language syntax highlighting",
-  "version": "0.0.1",
-  "engines": {
-    "vscode": "^1.91.0"
-  },
-  "categories": [
-    "Programming Languages"
-  ],
-  "contributes": {
-    "languages": [{
-      "id": "basm",
-      "aliases": ["basm", "basm"],
-      "extensions": [".basm",".binc",".bi"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "basm",
-      "scopeName": "source.basm",
-      "path": "./syntaxes/basm.tmLanguage.json"
-    }]
-  }
+	"name": "basm",
+	"displayName": "basm",
+	"publisher": "me",
+	"description": "B Assembly language syntax highlighting",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.91.0"
+	},
+	"icon": "./resources/logo.png",
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "basm",
+				"aliases": [
+					"basm",
+					"basm"
+				],
+				"extensions": [
+					".basm",
+					".binc",
+					".bi"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "basm",
+				"scopeName": "source.basm",
+				"path": "./syntaxes/basm.tmLanguage.json"
+			}
+		]
+	},
+	"__metadata": {
+		"size": 50000
+	}
 }
