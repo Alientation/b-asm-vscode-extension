@@ -362,7 +362,7 @@
 		"preprocessors": {
 			"patterns": [
 				{
-					"begin": "^\\s*(#include)\\b\\s*",
+					"begin": "(#include)\\b\\s*",
 					"end": "$",
 					"beginCaptures": {
 						"1": {
@@ -385,7 +385,7 @@
 					]
 				},
 				{
-					"begin": "(?<=^\\s*)(#macro)(\\b\\s*)([a-zA-Z_][\\w]*)\\b\\s*",
+					"begin": "(#macro)(\\b\\s*)([a-zA-Z_][\\w]*)\\b\\s*",
 					"end": "$",
 					"beginCaptures": {
 						"1": {
@@ -420,7 +420,7 @@
 					]
 				},
 				{
-					"begin": "(?<=^\\s*)(#macret)",
+					"begin": "(#macret)",
 					"end": "$",
 					"beginCaptures": {
 						"1": {
@@ -440,11 +440,11 @@
 					]
 				},
 				{
-					"match": "(?<=^\\s*)(#macend)",
+					"match": "(#macend)",
 					"name": "preprocessor.macend.basm"
 				},
 				{
-					"begin": "(?<=^\\s*)(#invoke)(\\b\\s*)([a-zA-Z_][\\w]*)\\b\\s*",
+					"begin": "(#invoke)(\\b\\s*)([a-zA-Z_][\\w]*)\\b\\s*",
 					"end": "$",
 					"beginCaptures": {
 						"1": {
@@ -473,7 +473,7 @@
 					]
 				},
 				{
-					"match": "(?<=^\\s*)(#define)(\\b\\s*)([a-zA-Z_][\\w]*)\\b\\s*",
+					"match": "(#define)(\\b\\s*)([a-zA-Z_][\\w]*)\\b\\s*",
 					"captures": {
 						"1": {
 							"name": "preprocessor.define.basm"
@@ -484,7 +484,7 @@
 					}
 				},
 				{
-					"match": "(?<=^\\s*)(#ifdef|#ifndef|#elsedef|#elsendef|#ifequ|#ifnequ|#ifmore|#ifless|#elseequ|#elsenequ|#elseless|#elsemore)(\\b\\s*)([a-zA-Z_][\\w]*)\\b\\s*",
+					"match": "(#ifdef|#ifndef|#elsedef|#elsendef|#ifequ|#ifnequ|#ifmore|#ifless|#elseequ|#elsenequ|#elseless|#elsemore)(\\b\\s*)([a-zA-Z_][\\w]*)\\b\\s*",
 					"captures": {
 						"1": {
 							"name": "preprocessor.conditional.basm"
@@ -495,7 +495,7 @@
 					}
 				},
 				{
-					"match": "(?<=^\\s*)(#else|#endif)\\b\\s*",
+					"match": "(#else|#endif)\\b\\s*",
 					"captures": {
 						"1": {
 							"name": "preprocessor.conditional.basm"
@@ -503,7 +503,7 @@
 					}
 				},
 				{
-					"match": "(?<=^\\s*)(#undef)(\\b\\s*)([a-zA-Z_][\\w]*)\\b\\s*",
+					"match": "(#undef)(\\b\\s*)([a-zA-Z_][\\w]*)\\b\\s*",
 					"captures": {
 						"1": {
 							"name": "preprocessor.undef.basm"
