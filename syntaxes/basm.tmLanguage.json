@@ -444,7 +444,7 @@
 					"name": "preprocessor.macend.basm"
 				},
 				{
-					"begin": "(#invoke)(\\b\\s*)([a-zA-Z_][\\w]*)\\b\\s*",
+					"begin": "(#invoke)(\\b\\s*)([a-zA-Z_][\\w]*)(\\b\\s*)",
 					"end": "$",
 					"beginCaptures": {
 						"1": {
@@ -457,7 +457,7 @@
 					"patterns": [
 						{
 							"begin": "\\(",
-							"end": "\\)(?=[ \\t]*$)",
+							"end": "\\)([ \\ta-zA-Z_]*$)",
 							"beginCaptures": {
 								"0": {
 									"name": "preprocessor.invoke.arguments.begin.basm"
@@ -466,6 +466,9 @@
 							"endCaptures": {
 								"0": {
 									"name": "preprocessor.invoke.arguments.end.basm"
+								},
+								"1": {
+									"name": "preprocessor.invoke.output.basm"
 								}
 							},
 							"name": "preprocessor.invoke.arguments.basm"
