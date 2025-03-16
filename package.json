@@ -16,12 +16,6 @@
 		"Programming Languages"
 	],
 	"contributes": {
-		"configurationDefaults": {
-			"[basm]": {
-				"editor.tabSize": 8,
-				"editor.insertSpaces": true
-			}
-		},
 		"themes": [
 			{
 				"label": "basm Theme",
@@ -34,7 +28,7 @@
 				"id": "basm",
 				"aliases": [
 					"basm",
-					"basm"
+					"BASM"
 				],
 				"extensions": [
 					".basm",
@@ -50,7 +44,13 @@
 				"scopeName": "source.basm",
 				"path": "./syntaxes/basm.tmLanguage.json"
 			}
-		]
+		],
+		"configurationDefaults": {
+			"[basm]": {
+				"editor.tabSize": 8,
+				"editor.insertSpaces": true
+			}
+		}
 	},
 	"__metadata": {
 		"size": 50000
