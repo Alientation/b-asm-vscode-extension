@@ -16,6 +16,19 @@
 		"Programming Languages"
 	],
 	"contributes": {
+		"configurationDefaults": {
+			"[basm]": {
+				"editor.tabSize": 8,
+				"editor.insertSpaces": true
+			}
+		},
+		"themes": [
+			{
+				"label": "basm Theme",
+				"uiTheme":  "vs-dark",
+				"path": "./themes/my-theme-color.json"
+			}
+		],
 		"languages": [
 			{
 				"id": "basm",

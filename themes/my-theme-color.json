@@ -1,0 +1,48 @@
+{
+    "name": "BASM Theme",
+    "type": "dark",
+    "tokenColors": [
+        {
+            "scope": "keyword.label",
+            "settings": {
+              "foreground": "#C586C0"
+            }
+          },
+          {
+            "scope": "keyword.instruction",
+            "settings": {
+              "foreground": "#4FC1FF"
+            }
+          },
+          {
+            "scope": "keyword.directive",
+            "settings": {
+              "foreground": "#DCDCAA"
+            }
+          },
+          {
+            "scope": "comment.singleline",
+            "settings": {
+              "foreground": "#6A9955"
+            }
+          },
+          {
+            "scope": "comment.multiline",
+            "settings": {
+              "foreground": "#6A9955"
+            }
+          },
+          {
+            "scope": "operand.immediatevalue",
+            "settings": {
+              "foreground": "#B5CEA8"
+            }
+          },
+          {
+            "scope": "operand.string",
+            "settings": {
+              "foreground": "#CE9178"
+            }
+          }
+    ]
+}
