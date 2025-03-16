@@ -2,6 +2,10 @@
 	"name": "basm",
 	"displayName": "basm",
 	"publisher": "me",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Alientation/b-asm-vscode-extension"
+	},
 	"description": "B Assembly language syntax highlighting",
 	"version": "0.0.1",
 	"engines": {
