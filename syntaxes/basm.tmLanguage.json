@@ -27,9 +27,6 @@
 			"include": "#labels"
 		},
 		{
-			"include": "#keywords"
-		},
-		{
 			"include": "#relocations"
 		},
 		{
@@ -58,7 +55,7 @@
 					"match": "\\bx[1-2]?[0-9]\\b"
 				},
 				{
-					"name": "register.x.basm",
+					"name": "register.xzr.basm",
 					"match": "\\bxzr\\b"
 				},
 				{
@@ -243,7 +240,7 @@
 				},
 				{
 					"name": "keyword.instruction.b.basm",
-					"match": "\\bb\\b"
+					"match": "\\bb(\\.(eq|ne|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al|nv))?\\b"
 				},
 				{
 					"name": "keyword.instruction.bl.basm",
@@ -549,6 +546,10 @@
 		"labels": {
 			"patterns": [
 				{
+					"match": "^\\s*_start:",
+					"name": "variable.label.start.basm"
+				},
+				{
 					"match": "^\\s*\\w+:",
 					"name": "variable.label.basm"
 				}
@@ -557,8 +558,12 @@
 		"symbols": {
 			"patterns": [
 				{
+					"match": "(?<=\\b)_start(?=\\b)",
+					"name": "variable.symbol.start.basm"
+				},
+				{
 					"match": "(?<=\\b)[a-zA-Z_][\\w]*(?=\\b)",
-					"name": "variable.parameter.symbol.basm"
+					"name": "variable.symbol.basm"
 				}
 			]
 		},

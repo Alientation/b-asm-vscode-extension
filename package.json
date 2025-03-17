@@ -16,13 +16,6 @@
 		"Programming Languages"
 	],
 	"contributes": {
-		"themes": [
-			{
-				"label": "basm Theme",
-				"uiTheme":  "vs-dark",
-				"path": "./themes/my-theme-color.json"
-			}
-		],
 		"languages": [
 			{
 				"id": "basm",
@@ -49,6 +42,104 @@
 			"[basm]": {
 				"editor.tabSize": 8,
 				"editor.insertSpaces": true
+			},
+			"editor.tokenColorCustomizations": {
+				"textMateRules": [
+					{
+						"scope": ["variable.label", "variable.symbol"],
+						"settings": {
+							"foreground": "#ffffff"
+						}
+					},
+					{
+						"scope": ["variable.label.start", "variable.symbol.start"],
+						"settings": {
+							"foreground": "#87ff57",
+							"fontStyle": "bold"
+						}
+					},
+					{
+						"scope": "keyword.instruction.ret.basm",
+						"settings": {
+							"foreground": "#C586C0",
+							"fontStyle": "bold"
+						}
+					},
+					{
+						"scope": "keyword.instruction.hlt.basm",
+						"settings": {
+							"foreground": "#FF0000",
+							"fontStyle": "bold"
+						}
+					},
+					{
+						"scope": "relocation",
+						"settings": {
+							"foreground": "#F78C6C"
+						}
+					},
+ 					{
+						"scope": "keyword.instruction",
+						"settings": {
+							"foreground": "#f8ee5b",
+							"fontStyle": "bold"
+						}
+					},
+					{
+						"scope": "register",
+						"settings": {
+							"foreground": "#4FC1FF"
+						}
+					},
+					{
+						"scope": "directive",
+						"settings": {
+							"foreground": "#DCDCAA"
+						}
+					},
+					{
+						"scope": "preprocessor",
+						"settings": {
+							"foreground": "#C586C0"
+						}
+					},
+					{
+						"scope": "preprocessor.macro.argument",
+						"settings": {
+							"foreground": "#d6d6d6"
+						}
+					},
+					{
+						"scope": "preprocessor.invoke.output",
+						"settings": {
+							"foreground": "#d6d6d6"
+						}
+					},
+					{
+						"scope": "comment.singleline",
+						"settings": {
+							"foreground": "#6A9955"
+						}
+					},
+					{
+						"scope": "comment.multiline",
+						"settings": {
+							"foreground": "#6A9955"
+						}
+					},
+					{
+						"scope": "operand.string",
+						"settings": {
+							"foreground": "#CE9178"
+						}
+					},
+					{
+						"scope": "operand.includepath",
+						"settings": {
+							"foreground": "#CE9178"
+						}
+					}
+				]
 			}
 		}
 	},
