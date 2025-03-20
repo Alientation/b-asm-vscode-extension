@@ -54,15 +54,13 @@
 					{
 						"scope": ["variable.label.start", "variable.symbol.start"],
 						"settings": {
-							"foreground": "#87ff57",
-							"fontStyle": "bold"
+							"foreground": "#87ff57"
 						}
 					},
 					{
 						"scope": "keyword.instruction.ret.basm",
 						"settings": {
-							"foreground": "#C586C0",
-							"fontStyle": "bold"
+							"foreground": "#C586C0"
 						}
 					},
 					{
@@ -81,8 +79,7 @@
  					{
 						"scope": "keyword.instruction",
 						"settings": {
-							"foreground": "#f8ee5b",
-							"fontStyle": "bold"
+							"foreground": "#f8ee5b"
 						}
 					},
 					{
