@@ -7,7 +7,7 @@
 		"url": "https://github.com/Alientation/b-asm-vscode-extension"
 	},
 	"description": "B Assembly language syntax highlighting",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"engines": {
 		"vscode": "^1.91.0"
 	},
@@ -48,13 +48,13 @@
 					{
 						"scope": ["variable.label", "variable.symbol"],
 						"settings": {
-							"foreground": "#ffffff"
+							"foreground": "#9CDCFE"
 						}
 					},
 					{
 						"scope": ["variable.label.start", "variable.symbol.start"],
 						"settings": {
-							"foreground": "#87ff57"
+							"foreground": "#C586C0"
 						}
 					},
 					{
@@ -73,13 +73,13 @@
 					{
 						"scope": "relocation",
 						"settings": {
-							"foreground": "#F78C6C"
+							"foreground": "#D7BA7D"
 						}
 					},
  					{
 						"scope": "keyword.instruction",
 						"settings": {
-							"foreground": "#f8ee5b"
+							"foreground": "#569CD6"
 						}
 					},
 					{
@@ -103,13 +103,13 @@
 					{
 						"scope": "preprocessor.macro.argument",
 						"settings": {
-							"foreground": "#d6d6d6"
+							"foreground": "#9CDCFE"
 						}
 					},
 					{
 						"scope": "preprocessor.invoke.output",
 						"settings": {
-							"foreground": "#d6d6d6"
+							"foreground": "#9CDCFE"
 						}
 					},
 					{
